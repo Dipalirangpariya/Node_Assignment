@@ -1,0 +1,9 @@
+{
+  "Domain_create_sucess":"Domain created sucessfully",
+  "Domain_not_exist":"Domain do not exists",
+  "Sucess_Message":"sucess",
+  "All_domains":"All Domains are :",
+  "Delete_Domain":"domain deleted successfully",
+  "valid_domain":"Domain_Name must be contain valid domain",
+"BAD_TOKEN":"BadTokenError"
+}
