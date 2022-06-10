@@ -5,5 +5,6 @@
   "All_domains":"All Domains are :",
   "Delete_Domain":"domain deleted successfully",
   "valid_domain":"Domain_Name must be contain valid domain",
-"BAD_TOKEN":"BadTokenError"
+  "BAD_TOKEN":"BadTokenError",
+  "Date":"en-IN"
 }

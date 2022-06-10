@@ -5,21 +5,34 @@ import { InternalError } from '../../core/ApiError';
 
 
 export default class UserRepo {
+
+/**
+ * 
+ * @param Id 
+ * @returns json|null
+ */
 public findbyid(Id:string): Promise<UserModel | null>{
    return UserModel.findOne({where:{userId:Id}})
 }
   public static findByEmail(email: string): Promise<UserModel |null> {
     return UserModel.findOne({ where:{email: email, status: true} })
   }
-
+/**
+ * 
+ * @param id 
+ * @returns json|null
+ */
   public static findPublicProfileById(id: string): Promise<UserModel | null> {
     return UserModel.findOne({where:{ userId: id, status: true }});
   }
-
+/**
+ * 
+ * @param user
+ * @param roleid 
+ * @returns json|null
+ */
   public static async create(
     user: UserModel,
-    accessTokenKey: string,
-    refreshTokenKey: string,
     roleid: string,
   ): Promise<{ user: UserModel }> {
     const now = new Date();
@@ -30,7 +43,11 @@ public findbyid(Id:string): Promise<UserModel | null>{
     const createdUser = await UserModel.create(user);
     return { user: createdUser};
   }
-
+/**
+ * 
+ * @param id 
+ * @returns json|null
+ */
 public static findProfileById(id: string): Promise<UserModel | null> {
     return UserModel.findOne({where:{ userId: id, status: true }})
 

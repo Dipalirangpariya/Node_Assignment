@@ -14,7 +14,8 @@
     "watch-ts": "tsc -w",
     "eslint": "eslint . --ext .js,.ts",
     "upgrade": "npm update --save-dev && npm update --save",
-    "test": "jest --forceExit --detectOpenHandles --coverage --verbose"
+    "test": "jest --forceExit --detectOpenHandles --coverage --verbose",
+    "doc-build": "apidoc -i src/routes -f \".*\\.ts$\" -o apidoc/"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
+    "apidoc": "^0.51.1",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.5",
@@ -36,6 +38,7 @@
     "joi-typescript-validator": "^0.2.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.20",
+    "moment": "^2.29.3",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
@@ -78,5 +81,19 @@
     "ts-node": "^9.0.0",
     "tslint": "^6.1.0",
     "typescript": "^4.0.5"
+  },
+  "apidoc": {
+    "name": "Domain - API Documentation",
+    "version": "0.1.0",
+    "description": "API documentation refer for ICD",
+    "title": "Domain - API Document ",
+    "url": "https://apidoc.domain.com/v1",
+    "sampleUrl": "",
+    "template": {
+      "showRequiredLabels": false,
+      "withCompare": true,
+      "withGenerator": true,
+      "aloneDisplay": false
+    }
   }
 }

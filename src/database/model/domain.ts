@@ -1,6 +1,4 @@
-
 import {  DataTypes, Model, Optional, Sequelize } from 'sequelize';
-import { AllowNull } from 'sequelize-typescript';
 
 export interface domain{
   Domain_id:number;
@@ -12,6 +10,7 @@ export interface domain{
   userId:string;
   createdAt: Date;
   updatedAt:Date;
+
 }
 
 export type DomainCreationAttributes = Optional<domain, 'Domain_id'>;
@@ -26,6 +25,7 @@ export class DomainModel extends Model<domain, DomainCreationAttributes> impleme
   public updatedAt!: Date;
   public userId!: string;
   public countryId!:number;
+  
 }
 
 export default function (sequelize: Sequelize): typeof DomainModel {
@@ -87,14 +87,17 @@ export default function (sequelize: Sequelize): typeof DomainModel {
 
     updatedAt:{
         type:DataTypes.DATE,
-        defaultValue:DataTypes.NOW
-    },   
+        defaultValue:DataTypes.NOW,
+    }, 
+    
     },
+
+
     {
     sequelize,
     tableName:"Domain"
     }
-                  );
+   );
 
     return DomainModel;
    

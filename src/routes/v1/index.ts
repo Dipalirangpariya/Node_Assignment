@@ -13,6 +13,24 @@ import country from './domain/country.route'
 // import user from './profile/user';
 const router = express.Router();
 
+/**
+ * @apiDefine DefinedError
+ * @apiError BadRequest The <code>040</code> of represent any request which is invoke with bad data, invalid form, invalid format and any validation error occured.
+ * @apiError Unauthorized   The <code>041</code> of represent any unauthenticaion event. Tring to access any resource without authentication.
+ * @apiError Forbidden/AccessDenied The <code>043</code> of represent any unauthorized event. Tring to accesss the resource which aren't permissible to specific user.
+ * @apiError NotFound The <code>044</code> of represent invalid resource or route which aren't available in platform.
+ * @apiError MethodNotAllowed The <code>045</code> of represent invalid method. trying to access resource with invalid method.
+ */
+/**
+ * @apiDefine DefinedErrorExample
+ * @apiErrorExample {json} Error-Response:
+ * HTTP/1.1 400 Bad Request
+ * {
+ *  statusCode: 040
+ *  message : Email id is required
+ * }
+ */
+
 // /*-------------------------------------------------------------------------*/
 // // Below all APIs are public APIs protected by api-key
 // router.use('/', apikey);

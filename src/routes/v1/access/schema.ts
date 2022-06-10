@@ -4,7 +4,7 @@ import { join } from 'path';
 export default {
   userCredential: Joi.object().keys({
     email: Joi.string().required().email(),
-    password: Joi.string().required().min(6),
+    password: Joi.string().required().min(6).max(15),
   }),
 
   refreshToken: Joi.object().keys({
@@ -15,7 +15,7 @@ export default {
     name: Joi.string().required().min(3),
     email: Joi.string().required().email(),
     password: Joi.string().required().min(6),
-    roleid:Joi.string().required().min(3)
+    roleid:Joi.string().required()
   }),
 
   

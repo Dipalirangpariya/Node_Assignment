@@ -1,7 +1,4 @@
 import Joi from '@hapi/joi';
-import { join } from 'path';
-import { NotNull } from 'sequelize-typescript';
-import domain from '../../../database/model/domain';
 
 export default {
 

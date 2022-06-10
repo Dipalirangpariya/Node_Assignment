@@ -5,5 +5,6 @@
   "All_domains":"Alle Domänen sind:",
   "Delete_Domain":"Domain erfolgreich gelöscht",
   "valid_domain":"Domänenname muss eine gültige Domäne enthalten",
-  "Domain_Description length":"Die Domain_Description muss mindestens 5 Zeichen lang sein"
+  "Domain_Description length":"Die Domain_Description muss mindestens 5 Zeichen lang sein",
+  "Date":"de-CH"
 }
