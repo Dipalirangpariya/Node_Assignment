@@ -20,9 +20,9 @@ export class DomainModel extends Model<domain, DomainCreationAttributes> impleme
   public Domain_Name!: string;
   public Domain_Description!: string;
   public createdAt!: Date;
+  public updatedAt!: Date;
   public Reason!:string;
   public Other!:string
-  public updatedAt!: Date;
   public userId!: string;
   public countryId!:number;
   
@@ -68,7 +68,6 @@ export default function (sequelize: Sequelize): typeof DomainModel {
           },
       allowNull: false
       },
-
       countryId:{
         type:DataTypes.INTEGER.UNSIGNED,
         references: {
@@ -81,17 +80,13 @@ export default function (sequelize: Sequelize): typeof DomainModel {
         allowNull: false
         },
     createdAt:{
-        type:DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
+      type:DataTypes.DATE,
     },
 
     updatedAt:{
-        type:DataTypes.DATE,
-        defaultValue:DataTypes.NOW,
+      type:DataTypes.DATE,
     }, 
-    
     },
-
 
     {
     sequelize,

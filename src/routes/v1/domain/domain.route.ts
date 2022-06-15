@@ -71,8 +71,6 @@ const router = express.Router();
  *
  */
   router.post('/domainCreate', validator(schema.domainInput), asyncHandler(async (req, res) => {
-    let d = new Date()
-    let datenow = new Date(d.toLocaleString(req.t('Date')));
     const {domain:createdDomain} = await domainRepo.create({
      Domain_Name:req.body.Domain_Name,
      Domain_Description:req.body.Domain_Description,
@@ -80,15 +78,12 @@ const router = express.Router();
      Other:req.body.Other,
      countryId:req.body.countryId,
      userId:req.body.userId,
-     createdAt:datenow,
-     updatedAt:datenow
+ 
     } as DomainModel,req.body.userId,req.body.countryId)
       new SuccessResponse( req.t("Domain_create_sucess"), { domain:createdDomain}).send(res);
     })
   );
   
-
-
 /**
  * @api {get} /domain/domainid/:id domain get by Id
  * @apiDescription The Api to get particular domain in the system

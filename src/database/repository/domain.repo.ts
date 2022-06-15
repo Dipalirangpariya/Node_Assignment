@@ -1,8 +1,8 @@
 import { InternalError } from '../../core/ApiError';
 import { countryModel } from '../model/Country';
 import domain,{ DomainModel } from '../model/domain';
+import { FormatedDateTime } from '../../helpers/DateTime';
 import { UserModel } from '../model/User';
-
 export default class domainRepo {
 
 /**
@@ -13,7 +13,6 @@ export default class domainRepo {
 public static findbyid(id:any) :Promise<DomainModel | null >{
   return DomainModel.findOne({where:{Domain_id:id}})
 }
-
 /**
  * Create Domain
  * 
@@ -29,9 +28,9 @@ public static async create(domain:DomainModel,userId:string,countryId:number): P
     if(!country) throw new InternalError('countryid must be defined');
    
     domain.userId= domains.userId;
-    domain.updatedAt == domain.createdAt
     domain.countryId=country.countryId;
-
+    domain.createdAt=(await FormatedDateTime.UTCtoSpecificTimezone('America/Los_Angeles')) as unknown as Date; 
+    domain.updatedAt=(await FormatedDateTime.currentUTCDateTime()) as unknown as Date; 
     const createdDomain = await DomainModel.create(domain);
     return {domain:createdDomain};
   }
